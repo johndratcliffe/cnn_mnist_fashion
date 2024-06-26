@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CNN MNIST FASHION</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>CNN Mnist Fashion</h1>
+        <section class="box">
+            <h2>Input Image</h2>
+            <p>Input image is a 28x28 pixel greyscale image from MNIST fashion dataset</p>
+            <canvas id="canvas" width="28" height="28"></canvas>
+        </section>
+        <section class="box">
+            <h2>Prediction</h2>
+            <p>Below you see what fashion item the CNN has predicted from the input image</p>
+            <p>Red is a wrong prediction, Green is a correct one.</p>
+            <p id="prediction">Training model. Please wait...</p>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js" type="text/javascript"></script>
+        <script src="script.js" type="module"></script>
+    </body>
+</html>
