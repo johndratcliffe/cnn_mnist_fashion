@@ -18,6 +18,10 @@
             <p>Red is a wrong prediction, Green is a correct one.</p>
             <p id="prediction">Training model. Please wait...</p>
         </section>
+        <div>
+            <p id="domSpeed">Change interval between classifications! Currently 1000ms</p>
+            <input id="ranger" type="range" min="15" max="5000" value="1000" class="slider">
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js" type="text/javascript"></script>
         <script src="script.js" type="module"></script>
     </body>

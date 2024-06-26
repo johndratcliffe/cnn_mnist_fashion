@@ -60,7 +60,7 @@ async function train () {
   await model.fit(RESHAPED_TENSOR, OUTPUTS_TENSOR, {
     shuffle: true,
     validationSplit: 0.15,
-    epochs: 30,
+    epochs: 5,
     batchSize: 256,
     callbacks: { onEpochEnd: logProgress }
   })
@@ -93,6 +93,14 @@ function evaluate () {
   })
 }
 
+let interval = 1000
+const RANGER = document.getElementById('ranger')
+const DOM_SPEED = document.getElementById('domSpeed')
+RANGER.addEventListener('input', function (e) {
+  interval = this.value
+  DOM_SPEED.innerText = 'Change speed of classification! Currently: ' + interval + 'ms'
+})
+
 const CANVAS = document.getElementById('canvas')
 const CTX = CANVAS.getContext('2d')
 function drawImage (item) {
@@ -104,5 +112,5 @@ function drawImage (item) {
     imageData.data[i * 4 + 3] = 255
   }
   CTX.putImageData(imageData, 0, 0)
-  // setTimeout(evaluate, 2000)
+  setTimeout(evaluate, interval)
 }

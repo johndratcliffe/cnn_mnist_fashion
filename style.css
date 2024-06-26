@@ -32,6 +32,11 @@ p#prediction.wrong {
     font-size: 100px;
 }
 
+div {
+    clear: left;
+    text-align: center;
+}
+
 canvas {
     width: 28px;
     height: 28px;
